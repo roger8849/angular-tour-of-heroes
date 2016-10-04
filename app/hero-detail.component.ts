@@ -9,7 +9,7 @@ import { HeroService } from './hero.service';
 
 @Component({
 	selector: 'my-hero-detail',
-	templateUrl: '../hero-detail-component.html';
+	templateUrl: 'app/hero-detail.component.html'
 })
 
 export class HeroDetailComponent implements OnInit {
@@ -30,5 +30,10 @@ export class HeroDetailComponent implements OnInit {
 
 	goBack(): void {
 		this.location.back();
+	}
+
+	gotoDetail(hero: Hero): void {
+		let link = ['/detail', hero.id];
+		this.router.navigate(link);
 	}
 }
